@@ -35,7 +35,7 @@ const onSubmit = async (data: formdata) => {
     setResult(null);
 
     try{
-      const response = await fetch(`http://localhost:2999/?ip=${data.ip}`);
+      const response = await fetch(`https://weatherproject-1-fqn9.onrender.com/?ip=${data.ip}`);
       const html = await response.text();
       setResult(html);
     } catch (error){
