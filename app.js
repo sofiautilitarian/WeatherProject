@@ -11,7 +11,8 @@ app.use(cors());
 app.get('/', function (req, res) {
     //Declaring the variables
     const val = 'True';
-    const apiKey = 'oRj2nTI5qxxzcRUBntX1ZgIXqAnizGPR';  // Replace with your actual API key
+    const apiKey = process.env.ACCUWEATHER_API_KEY;
+    //const apiKey = 'oRj2nTI5qxxzcRUBntX1ZgIXqAnizGPR';  // Replace with your actual API key
     const ipAddress = req.query.ip || '103.73.225.6'; // Replace with a valid IP address
     const url = "https://dataservice.accuweather.com/locations/v1/cities/ipaddress?apikey=" + apiKey + "&q=" + ipAddress + "&details=" + val;
 
